@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 # cria um .md de um sonho nulo ou com conteúdo no obsidian
-source ./config.sh
+source /mnt/seagate/bash/internal/config.sh
 
 today=$(date +"%Y-%m-%d") # obtém a data atual e formata ela pra iso 8601
 already_regisred=false # declara se o sonho de hoje já foi registrado ou não (é uma string, não um boolean de verdade) 

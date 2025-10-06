@@ -1,5 +1,5 @@
 # define aliases pra serem um atalho pra qualquer tipo de comando
-source ./config.sh
+source /mnt/seagate/bash/internal/config.sh
 
 # ativar venvs de python
 alias actvenv="source venv/bin/activate"
