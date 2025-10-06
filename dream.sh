@@ -1,0 +1,57 @@
+# cria um .md de um sonho nulo ou com conteúdo no obsidian
+source ./config.sh
+
+today=$(date +"%Y-%m-%d") # obtém a data atual e formata ela pra iso 8601
+already_regisred=false # declara se o sonho de hoje já foi registrado ou não (é uma string, não um boolean de verdade) 
+
+for md_file in $CURRENT_DREAM_JOURNAL/*.md; do
+    # basename retorna só o nome do arquivo em vez do path completo
+    file_name=$(basename "$md_file")
+
+    # corta o nome do arquivo de 0 até 10, que é a quantidade que o formato de data em iso tem
+    # assim, o nome do arquivo é desconsiderado e apenas a data permanece
+    date_on_name=${file_name:0:10}
+    
+    # sinalizar caso um sonho com a mesma data já exista
+    if [[ $date_on_name == $today ]]; then
+        already_regisred=true
+        break
+    fi
+done
+
+if [[ $already_regisred != true ]]; then
+    # obter o título do sonho caso ele seja passado com -t ou --title
+    TITLE=""
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -t|--title)
+                TITLE="$2"
+                shift 2
+                ;;
+            *)
+                shift
+                ;;
+        esac
+    done
+
+    # se o título tiver caracteres não suportados, sai do script indicando erro (exit 1)
+    if [[ "$TITLE" =~ [^a-zA-Z0-9_-] ]]; then
+        echo "⚠️ o título contém espaços ou caracteres especiais"
+        exit 1
+    fi
+
+    # definir o nome final do arquivo markdown
+    if [[ -n "$TITLE" ]]; then
+        entry_name=$today"_"$TITLE".md"
+    else
+        entry_name=$today"_null.md"
+    fi
+
+    # registar o sonho no path final
+    > $CURRENT_DREAM_JOURNAL/$entry_name
+    echo "🌒 sonho anotado com sucesso"
+    echo $CURRENT_DREAM_JOURNAL/$entry_name
+else
+    echo "💉 o sonho de hoje já foi anotado"
+fi

@@ -1,4 +1,9 @@
+# define aliases pra serem um atalho pra qualquer tipo de comando
+source ./config.sh
+
+# ativar venvs de python
 alias actvenv="source venv/bin/activate"
 alias actenv="source env/bin/activate"
 
-alias confortavel="cd /mnt/seagate/workspace/coding/projects/bots/confortavel && source /mnt/seagate/workspace/coding/projects/bots/confortavel/env/bin/activate && /mnt/seagate/workspace/coding/projects/bots/confortavel/env/bin/python /mnt/seagate/workspace/coding/projects/bots/confortavel/main.py"
+# ativar o bot
+alias confortavel="cd $SEAGATE/workspace/coding/projects/bots/confortavel && source $SEAGATE/workspace/coding/projects/bots/confortavel/env/bin/activate && /mnt/seagate/workspace/coding/projects/bots/confortavel/env/bin/python /mnt/seagate/workspace/coding/projects/bots/confortavel/main.py"
