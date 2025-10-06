@@ -1,4 +1,5 @@
 # define aliases pra serem um atalho pra qualquer tipo de comando
+
 source /mnt/seagate/bash/internal/config.sh
 
 # ativar venvs de python

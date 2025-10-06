@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
-
 # cria um .md de um sonho nulo ou com conteúdo no obsidian
+
 source /mnt/seagate/bash/internal/config.sh
+
+year=$(date +"%Y") # obtém só o ano atual
+current_dream_journal=$OBSIDIAN_VAULTS/$VAULT_NAME_DREAMS/dream-log/$year
+dream_journal_relative=/dream-log/$year
 
 today=$(date +"%Y-%m-%d") # obtém a data atual e formata ela pra iso 8601
 already_regisred=false # declara se o sonho de hoje já foi registrado ou não (é uma string, não um boolean de verdade) 
 
-for md_file in $CURRENT_DREAM_JOURNAL/*.md; do
+for md_file in $current_dream_journal/*.md; do
     # basename retorna só o nome do arquivo em vez do path completo
     file_name=$(basename "$md_file")
 
@@ -44,6 +48,7 @@ if [[ $already_regisred != true ]]; then
     fi
 
     # definir o nome final do arquivo markdown
+    # se o title não for nulo, atribui ele a nota, se não, nomeia ela como null
     if [[ -n "$TITLE" ]]; then
         entry_name=$today"_"$TITLE".md"
     else
@@ -51,9 +56,15 @@ if [[ $already_regisred != true ]]; then
     fi
 
     # registar o sonho no path final
-    > $CURRENT_DREAM_JOURNAL/$entry_name
+    > $current_dream_journal/$entry_name
     echo "🌒 sonho anotado com sucesso"
-    echo $CURRENT_DREAM_JOURNAL/$entry_name
+    echo $current_dream_journal/$entry_name
+
+    # abrir o obsidian pra editar a nota caso ele tenha título
+    if [[ -n "$TITLE" ]]; then
+        echo "🪫 a nota possui um título. abrindo o obsidian..."
+        xdg-open "obsidian://open?vault=$NAME_VAULT_DREAMS&file=$dream_journal_relative/$entry_name"
+    fi
 else
     echo "💉 o sonho de hoje já foi anotado"
 fi

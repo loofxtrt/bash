@@ -2,5 +2,6 @@
 # pra importar elas é só usar `source <caminho desse arquivo>`
 
 SEAGATE="/mnt/seagate"
-VAULTS=$SEAGATE/obsidian-vaults
-CURRENT_DREAM_JOURNAL=$VAULTS/dream-recall/dream-log/2025
+
+OBSIDIAN_VAULTS=$SEAGATE/obsidian-vaults
+VAULT_NAME_DREAMS=dream-recall
