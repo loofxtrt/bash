@@ -10,8 +10,7 @@ end = ''
 
 # as barras precisam ser escapadas duas vezes
 # pra que uma delas permaneça no arquivo final
-contents = f'''
-format = """
+contents = f'''format = """
 $username\\
 [{end}](fg:{gray} bg:{dark_gray})\\
 $hostname\\
