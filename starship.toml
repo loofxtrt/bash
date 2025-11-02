@@ -1,8 +1,8 @@
 format = """
 $username\
-[](fg:green bg:bright-black)\
+[](fg:green bg:#585b70)\
 $hostname\
-[](fg:bright-black bg:#45475a)\
+[](fg:#585b70 bg:#45475a)\
 $directory\
 [](fg:#45475a) \
 """ # a última linha tem espaço pra separar o cursor
@@ -15,7 +15,7 @@ format = '[ $user ]($style)'
 
 [hostname]
 ssh_only = false
-style = "bg:bright-black fg:#cdd6f4"
+style = "bg:#585b70 fg:#cdd6f4"
 format = '[ @ $hostname ]($style)'
 
 [directory]

@@ -1,7 +1,7 @@
 # https://catppuccin.com/palette/
 black = '#313244'
 light_black = '#45475a'
-dark_gray = '#585b70'
+dark_gray = '#585b70' # bright-black
 gray = 'green'
 white = '#cdd6f4'
 
