@@ -10,7 +10,11 @@ end = ''
 
 # as barras precisam ser escapadas duas vezes
 # pra que uma delas permaneça no arquivo final
-contents = f'''format = """
+# o add_newline impede que um espaço em branco a cima do prompt seja criado
+contents = f'''
+add_newline = false
+
+format = """
 $username\\
 [{end}](fg:{gray} bg:{dark_gray})\\
 $hostname\\

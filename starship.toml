@@ -1,3 +1,5 @@
+add_newline = false
+
 format = """
 $username\
 [](fg:green bg:#585b70)\
