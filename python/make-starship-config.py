@@ -5,16 +5,19 @@ dark_gray = 'bright-black'
 gray = 'green'
 white = '#cdd6f4'
 
+end = ''
+#end = ''
+
 # as barras precisam ser escapadas duas vezes
 # pra que uma delas permaneça no arquivo final
 contents = f'''
 format = """
 $username\\
-[](fg:{gray} bg:{dark_gray})\\
+[{end}](fg:{gray} bg:{dark_gray})\\
 $hostname\\
-[](fg:{dark_gray} bg:{light_black})\\
+[{end}](fg:{dark_gray} bg:{light_black})\\
 $directory\\
-[](fg:{light_black}) \\
+[{end}](fg:{light_black}) \\
 """ # a última linha tem espaço pra separar o cursor
 
 [username]
@@ -26,7 +29,7 @@ format = '[ $user ]($style)'
 [hostname]
 ssh_only = false
 style = "bg:{dark_gray} fg:{white}"
-format = '[  $hostname ]($style)'
+format = '[ @ $hostname ]($style)'
 
 [directory]
 style = "fg:{white} bg:{light_black}"
