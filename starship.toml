@@ -1,0 +1,26 @@
+
+format = """
+$username\
+[](fg:green bg:bright-black)\
+$hostname\
+[](fg:bright-black bg:#45475a)\
+$directory\
+[](fg:#45475a) \
+""" # a última linha tem espaço pra separar o cursor
+
+[username]
+show_always = true
+style_user = "bg:green fg:#313244"
+style_root = "bg:green fg:#cdd6f4"
+format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+style = "bg:bright-black fg:#cdd6f4"
+format = '[  $hostname ]($style)'
+
+[directory]
+style = "fg:#cdd6f4 bg:#45475a"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"

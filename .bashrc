@@ -19,3 +19,12 @@ for file in $BASH_GLOBAL/*.sh; do source "$file"; done
 
 # carregar scripts chamáveis e integra-los ao sistema
 export PATH="$PATH:/mnt/seagate/bash/scripts"
+
+# integrar o flutter e o android sdk ao sistema
+export PATH="/mnt/seagate/workspace/coding/mobile/flutter-sdk/bin:$PATH"
+
+export ANDROID_SDK_ROOT=/mnt/seagate/workspace/coding/mobile/android-sdk
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# iniciar o starship (powerline)
+eval "$(starship init bash)"

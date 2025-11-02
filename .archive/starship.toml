@@ -1,0 +1,198 @@
+#1d2432 -> preto
+#202938 -> preto mais claro
+#374361 -> cinza escuro
+#a3aed2 -> cinza claro
+#769ff0 -> azul
+
+# format = """
+# [ 󱞩 ]()\
+# $username\
+# [@]()\
+# $hostname \
+# $directory \
+# """ # a última linha tem espaço pra separar o cursor
+#
+# [username]
+# show_always = true
+# format = '[$user]($style)'
+#
+# [hostname]
+# ssh_only = false
+# format = '[$hostname]($style)'
+#
+# [directory]
+# format = "[$path]($style)"
+# truncation_length = 3
+# truncation_symbol = "…/"
+
+format = """
+$username\
+[](fg:#a3aed2 bg:#374361)\
+$hostname\
+[](fg:#374361 bg:#1d2432)\
+$directory\
+[](fg:#1d2432) \
+""" # a última linha tem espaço pra separar o cursor
+
+[username]
+show_always = true
+style_user = "bg:#a3aed2 fg:#1d2432"
+style_root = "bg:#a3aed2 fg:#FFFFFF"
+format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+style = "bg:#374361 fg:#FFFFFF"
+format = '[ $hostname ]($style)'
+
+[directory]
+style = "fg:#e3e5e5 bg:#1d2432"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+
+
+
+
+
+
+
+
+
+
+# format = """
+# $username\
+# [](fg:#a3aed2 bg:#769ff0)\
+# [ @](fg:#FFFFFF bg:#769ff0)\
+# [](fg:#769ff0 bg:#374361)\
+# [](fg:#374361 bg:#202938)\
+# [](fg:#202938 bg:#1d2432)\
+# $hostname\
+# $directory\
+# [](fg:#1d2432) \
+# """ # a última linha tem espaço pra separar o cursor
+#
+# [username]
+# show_always = true
+# style_user = "bg:#a3aed2 fg:#1d2432"
+# style_root = "bg:#a3aed2 fg:#FFFFFF"
+# format = '[ $user]($style)'
+#
+# [hostname]
+# ssh_only = false
+# style = "bg:#1d2432 fg:#FFFFFF"
+# format = '[ $hostname ]($style)'
+#
+# [directory]
+# style = "fg:#e3e5e5 bg:#1d2432"
+# format = "[ $path ]($style)"
+# truncation_length = 3
+# truncation_symbol = "…/"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# format = """
+# $username\
+# [@ ](fg:#1d2432 bg:#a3aed2)\
+# [](fg:#a3aed2 bg:#374361)\
+# $hostname\
+# $directory\
+# [](fg:#374361) \
+# """ # a última linha tem espaço pra separar o cursor
+#
+# [username]
+# show_always = true
+# style_user = "bg:#a3aed2 fg:#1d2432"
+# style_root = "bg:#a3aed2 fg:#FFFFFF"
+# format = '[ $user ]($style)'
+#
+# [hostname]
+# ssh_only = false
+# style = "bg:#374361 fg:#FFFFFF"
+# format = '[ $hostname ]($style)'
+#
+# [directory]
+# style = "fg:#e3e5e5 bg:#374361"
+# format = "[ $path ]($style)"
+# truncation_length = 3
+# truncation_symbol = "…/"
+
+
+
+
+
+
+
+
+
+
+# format = """
+# $username\
+# [](fg:#a3aed2 bg:#769ff0)\
+# [ @ ](fg:#FFFFFF bg:#689ef1)\
+# [](fg:#689ef1 bg:#374361)\
+# $hostname\
+# [](fg:#374361 bg:#1d2432)\
+# [ "\\$" ](fg:#9ba7c9 bg:#1d2432)\
+# [](fg:#1d2432) \
+# """ # a última linha tem espaço pra separar o cursor
+#
+# [username]
+# show_always = true
+# style_user = "bg:#a3aed2 fg:#1d2432"
+# style_root = "bg:#a3aed2 fg:#FFFFFF"
+# format = '[ $user ]($style)'
+#
+# [hostname]
+# ssh_only = false
+# style = "bg:#374361 fg:#FFFFFF"
+# format = '[ $hostname ]($style)'
+
+
+
+
+
+
+#$username\
+#[](bg:#9A348E fg:#DA627D)\
+#[ @ ](bg:#9A348E fg:#FCA17D)\
+#[](bg:#FCA17D fg:#9A348E)\
+#$hostname\
+#[](fg:#FCA17D bg:#86BBD8)\
+#$time\
+#[](fg:#86BBD8 bg:#FCA17D)\
+#[ "\\$" ](bg:#FCA17D fg:#86BBD8)\
+#[](fg:#FCA17D) \
+
+#[time]
+#disabled = false
+#time_format = "%R"
+#style = "bg:#86BBD8 fg:#FFFFFF"
+#format = '[ $time ]($style)'
